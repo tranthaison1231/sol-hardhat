@@ -1,0 +1,18 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@openzeppelin/contracts": "^4.7.2",
+    "dotenv": "^16.0.1",
+    "hardhat": "^2.10.1"
+  },
+  "scripts": {
+    "node": "hardhat node",
+    "compile": "hardhat compile",
+    "deploy:gld": "hardhat run scripts/GLDToken-deploy.ts --network",
+    "deploy:badge": "hardhat run scripts/BadgeToken-deploy.ts --network",
+    "test": "hardhat test",
+    "verify": "hardhat verify --network",
+    "console": "hardhat console --network"
+  }
+}
