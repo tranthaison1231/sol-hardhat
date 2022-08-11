@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0;
+pragma solidity ^0.8.4.0;
 
 /// @title Base64
 /// @author Brecht Devos - <brecht@loopring.org>
@@ -69,7 +69,7 @@ library Base64 {
         bytes memory data = bytes(_data);
 
         if (data.length == 0) return new bytes(0);
-        require(data.length % 4 == 0, "invalid base64 decoder input");
+        require(data.length % 4 == 0, 'invalid base64 decoder input');
 
         // load the table into memory
         bytes memory table = TABLE_DECODE;
