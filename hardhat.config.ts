@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
 
-const metamask_private_key = '0x' + process.env.METAMASK_PRIVATE_KEY;
+const metamask_private_key = `0x${process.env.METAMASK_PRIVATE_KEY}`;
 
 const config: HardhatUserConfig = {
   solidity: '0.8.9',

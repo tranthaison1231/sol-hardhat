@@ -6,8 +6,8 @@ import { ethers } from 'hardhat';
 describe('BadgeToken contract', function () {
   let BadgeToken;
   let token721: Contract;
-  let _name = 'BadgeToken';
-  let _symbol = 'Badge';
+  const _name = 'BadgeToken';
+  const _symbol = 'Badge';
   let owner: SignerWithAddress;
   let account1: SignerWithAddress;
   let otheraccounts: SignerWithAddress[];

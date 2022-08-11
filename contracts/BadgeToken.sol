@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
-import "hardhat/console.sol";
-import "./base64.sol";
+import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
+import '@openzeppelin/contracts/utils/Strings.sol';
+import 'hardhat/console.sol';
+import './base64.sol';
 
 contract BadgeToken is ERC721 {
     uint256 private _currentTokenId = 0;//Token ID here will start from 1
@@ -13,8 +13,7 @@ contract BadgeToken is ERC721 {
     constructor(
         string memory _name,
         string memory _symbol
-    ) ERC721(_name, _symbol) {
-    }
+    ) ERC721(_name, _symbol) {}
 
     /**
      * @dev Mints a token to an address with a tokenURI.
@@ -23,7 +22,7 @@ contract BadgeToken is ERC721 {
     function mintTo(address _to) public {
         uint256 newTokenId = _getNextTokenId();
          //log newTokenId to blockchain node console
-        console.log("newTokenId:",newTokenId);
+        console.log('newTokenId:',newTokenId);
         _mint(_to, newTokenId);
         _incrementTokenId();
     }

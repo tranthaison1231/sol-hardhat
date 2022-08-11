@@ -2,9 +2,14 @@
   "name": "hardhat-project",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
-    "@openzeppelin/contracts": "^4.7.2",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "dotenv": "^16.0.1",
-    "hardhat": "^2.10.1"
+    "hardhat": "^2.10.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.24",
+    "solhint": "^3.3.7"
   },
   "scripts": {
     "node": "hardhat node",
@@ -13,6 +18,9 @@
     "deploy:badge": "hardhat run scripts/BadgeToken-deploy.ts --network",
     "test": "hardhat test",
     "verify": "hardhat verify --network",
-    "console": "hardhat console --network"
+    "console": "hardhat console --network",
+    "lint": "solhint 'contracts/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "format": "prettier --write ."
   }
 }
