@@ -1,6 +1,7 @@
 {
   "name": "hardhat-project",
   "devDependencies": {
+    "@chainlink/contracts": "^0.4.2",
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
     "@openzeppelin/contracts": "^4.7.3",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
@@ -16,6 +17,7 @@
     "compile": "hardhat compile",
     "deploy:gld": "hardhat run scripts/GLDToken-deploy.ts --network",
     "deploy:badge": "hardhat run scripts/BadgeToken-deploy.ts --network",
+    "deploy:getPriceFeed": "hardhat run scripts/GetPriceFeed-deploy.ts --network",
     "test": "hardhat test",
     "verify": "hardhat verify --network",
     "console": "hardhat console --network",

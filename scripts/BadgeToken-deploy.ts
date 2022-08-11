@@ -15,3 +15,19 @@ main()
     console.error(error);
     process.exit(1);
   });
+
+// fromWei = ethers.utils.formatEther;
+// toWei = ethers.utils.parseEther;
+
+// const address = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+// const token = await ethers.getContractAt('GLDToken', address);
+
+// const accounts = await hre.ethers.getSigners();
+// owner = accounts[0].address;
+// toAddress = accounts[1].address;
+
+// await token.symbol();
+// //'GLD'
+
+// totalSupply = await token.totalSupply();
+// fromWei(totalSupply);
