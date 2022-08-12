@@ -5,7 +5,7 @@ import '@nomicfoundation/hardhat-toolbox';
 const metamask_private_key = `0x${process.env.METAMASK_PRIVATE_KEY}`;
 
 const config: HardhatUserConfig = {
-  solidity: '0.8.9',
+  solidity: '0.8.16',
   networks: {
     localhost: {
       url: 'http://127.0.0.1:8545',
