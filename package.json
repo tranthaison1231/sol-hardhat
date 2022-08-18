@@ -10,7 +10,15 @@
     "hardhat": "^2.10.1",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.24",
-    "solhint": "^3.3.7"
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5",
+    "husky": "^8.0.1",
+    "typescript": "^4.7.4"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "scripts": {
     "node": "hardhat node",
@@ -23,6 +31,8 @@
     "console": "hardhat console --network",
     "lint": "solhint 'contracts/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "check-types": "tsc --noEmit --pretty"
   }
 }

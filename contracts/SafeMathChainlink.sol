@@ -26,7 +26,7 @@ library SafeMathChainlink {
    */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    require(c >= a, "SafeMath: addition overflow");
+    require(c >= a, 'SafeMath: addition overflow');
 
     return c;
   }
@@ -41,7 +41,7 @@ library SafeMathChainlink {
    * - Subtraction cannot overflow.
    */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    require(b <= a, "SafeMath: subtraction overflow");
+    require(b <= a, 'SafeMath: subtraction overflow');
     uint256 c = a - b;
 
     return c;
@@ -65,7 +65,7 @@ library SafeMathChainlink {
     }
 
     uint256 c = a * b;
-    require(c / a == b, "SafeMath: multiplication overflow");
+    require(c / a == b, 'SafeMath: multiplication overflow');
 
     return c;
   }
@@ -83,7 +83,7 @@ library SafeMathChainlink {
    */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
     // Solidity only automatically asserts when dividing by 0
-    require(b > 0, "SafeMath: division by zero");
+    require(b > 0, 'SafeMath: division by zero');
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn't hold
 
@@ -102,7 +102,7 @@ library SafeMathChainlink {
    * - The divisor cannot be zero.
    */
   function mod(uint256 a, uint256 b) internal pure returns (uint256) {
-    require(b != 0, "SafeMath: modulo by zero");
+    require(b != 0, 'SafeMath: modulo by zero');
     return a % b;
   }
 }
