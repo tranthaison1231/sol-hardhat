@@ -1,20 +1,21 @@
 {
   "name": "hardhat-project",
   "devDependencies": {
+    "@chainlink/contracts": "^0.4.2",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@chainlink/contracts": "^0.4.2",
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
     "@openzeppelin/contracts": "^4.7.3",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "dotenv": "^16.0.1",
     "hardhat": "^2.10.1",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.24",
     "solhint": "^3.3.7",
     "solhint-plugin-prettier": "^0.0.5",
-    "husky": "^8.0.1",
     "typescript": "^4.7.4"
   },
   "commitlint": {
@@ -26,6 +27,7 @@
     "node": "hardhat node",
     "compile": "hardhat compile",
     "deploy:gld": "hardhat run scripts/GLDToken-deploy.ts --network",
+    "deploy:env": "hardhat run scripts/EnouvaToken-deploy.ts --network",
     "deploy:badge": "hardhat run scripts/BadgeToken-deploy.ts --network",
     "deploy:getPriceFeed": "hardhat run scripts/GetPriceFeed-deploy.ts --network",
     "test": "hardhat test",

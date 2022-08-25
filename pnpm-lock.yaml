@@ -5,6 +5,7 @@ specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@nomicfoundation/hardhat-toolbox': ^1.0.2
+  '@nomiclabs/hardhat-etherscan': ^3.1.0
   '@openzeppelin/contracts': ^4.7.3
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
@@ -21,7 +22,8 @@ devDependencies:
   '@chainlink/contracts': 0.4.2
   '@commitlint/cli': 17.0.3
   '@commitlint/config-conventional': 17.0.3
-  '@nomicfoundation/hardhat-toolbox': 1.0.2_2heyxo5mt6ucwq6vqzmv64c7cm
+  '@nomicfoundation/hardhat-toolbox': 1.0.2_fvhlt7a5npj7ewgk7m6boal7au
+  '@nomiclabs/hardhat-etherscan': 3.1.0_hardhat@2.10.1
   '@openzeppelin/contracts': 4.7.3
   '@typescript-eslint/eslint-plugin': 5.33.0_b5rzqffo2svu4zcpd5pxzblnza
   '@typescript-eslint/parser': 5.33.0_typescript@4.7.4
@@ -700,7 +702,7 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@nomicfoundation/hardhat-toolbox/1.0.2_2heyxo5mt6ucwq6vqzmv64c7cm:
+  /@nomicfoundation/hardhat-toolbox/1.0.2_fvhlt7a5npj7ewgk7m6boal7au:
     resolution: {integrity: sha512-8CEgWSKUK2aMit+76Sez8n7UB0Ze1lwT+LcWxj4EFP30lQWOwOws048t6MTPfThH0BlSWjC6hJRr0LncIkc1Sw==}
     peerDependencies:
       '@ethersproject/abi': ^5.4.7
@@ -723,8 +725,29 @@ packages:
       typechain: ^8.1.0
       typescript: '>=4.5.0'
     dependencies:
+      '@nomiclabs/hardhat-etherscan': 3.1.0_hardhat@2.10.1
       hardhat: 2.10.1_typescript@4.7.4
       typescript: 4.7.4
+    dev: true
+
+  /@nomiclabs/hardhat-etherscan/3.1.0_hardhat@2.10.1:
+    resolution: {integrity: sha512-JroYgfN1AlYFkQTQ3nRwFi4o8NtZF7K/qFR2dxDUgHbCtIagkUseca9L4E/D2ScUm4XT40+8PbCdqZi+XmHyQA==}
+    peerDependencies:
+      hardhat: ^2.0.4
+    dependencies:
+      '@ethersproject/abi': 5.6.4
+      '@ethersproject/address': 5.6.1
+      cbor: 5.2.0
+      chalk: 2.4.2
+      debug: 4.3.4
+      fs-extra: 7.0.1
+      hardhat: 2.10.1_typescript@4.7.4
+      lodash: 4.17.21
+      semver: 6.3.0
+      table: 6.8.0
+      undici: 5.8.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@openzeppelin/contracts/4.7.3:
@@ -1246,6 +1269,11 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /astral-regex/2.0.0:
+    resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
+    engines: {node: '>=8'}
+    dev: true
+
   /async-eventemitter/0.2.4:
     resolution: {integrity: sha512-pd20BwL7Yt1zwDFy+8MX8F1+WCT8aQeKj0kQnTrH9WaeRETlRamVhD0JtRPmrV4GfOJ2F9CvdQkZeZhnh2TuHw==}
     dependencies:
@@ -1274,6 +1302,10 @@ packages:
 
   /bech32/1.1.4:
     resolution: {integrity: sha512-s0IrSOzLlbvX7yp4WBfPITzpAU8sqQcpsmwXDiKwrG4r491vwCO/XpejasRNl0piBMe/DvP4Tz0mIS/X1DPJBQ==}
+    dev: true
+
+  /bignumber.js/9.1.0:
+    resolution: {integrity: sha512-4LwHK4nfDOraBCtst+wOWIHbu1vhvAPJK8g8nROd4iuc3PSEjWif/qwbkh8jwCJz6yDBvtU4KPynETgrfh7y3A==}
     dev: true
 
   /binary-extensions/2.2.0:
@@ -1425,6 +1457,14 @@ packages:
   /camelcase/6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /cbor/5.2.0:
+    resolution: {integrity: sha512-5IMhi9e1QU76ppa5/ajP1BmMWZ2FHkhAhjeVKQ/EFCgYSEaeVaoGtL7cxJskf9oCCk+XjzaIdc3IuU/dbA/o2A==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      bignumber.js: 9.1.0
+      nofilter: 1.0.4
     dev: true
 
   /chai/4.3.6:
@@ -2935,6 +2975,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.truncate/4.4.2:
+    resolution: {integrity: sha512-jttmRe7bRse52OsWIMDLaXxWqRAmtIUccAQ3garviCqJjafXOfNMO0yMfNpdD6zbGaTU0P5Nz7e7gAT6cKmJRw==}
+    dev: true
+
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
@@ -3195,6 +3239,11 @@ packages:
   /node-gyp-build/4.5.0:
     resolution: {integrity: sha512-2iGbaQBV+ITgCz76ZEjmhUKAKVf7xfY1sRl4UiKQspfZMH2h06SyhNsnSVy50cwkFQDGLyif6m/6uFXHkOZ6rg==}
     hasBin: true
+    dev: true
+
+  /nofilter/1.0.4:
+    resolution: {integrity: sha512-N8lidFp+fCz+TD51+haYdbDGrcBWwuHX40F5+z0qkUjMJ5Tp+rdSuAkMJ9N9eoolDlEVTf6u5icM+cNKkKW2mA==}
+    engines: {node: '>=8'}
     dev: true
 
   /normalize-package-data/2.5.0:
@@ -3778,6 +3827,15 @@ packages:
       is-fullwidth-code-point: 2.0.0
     dev: true
 
+  /slice-ansi/4.0.0:
+    resolution: {integrity: sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.3.0
+      astral-regex: 2.0.0
+      is-fullwidth-code-point: 3.0.0
+    dev: true
+
   /solc/0.7.3_debug@4.3.4:
     resolution: {integrity: sha512-GAsWNAjGzIDg7VxzP6mPjdurby3IkGCjQcM8GFYZT6RyaoUZKmMU6Y7YwG+tFGhv7dwZ8rmR4iwFDrrD99JwqA==}
     engines: {node: '>=8.0.0'}
@@ -4002,6 +4060,17 @@ packages:
       lodash: 4.17.21
       slice-ansi: 2.1.0
       string-width: 3.1.0
+    dev: true
+
+  /table/6.8.0:
+    resolution: {integrity: sha512-s/fitrbVeEyHKFa7mFdkuQMWlH1Wgw/yEXMt5xACT4ZpzWFluehAxRtUUQKPuWhaLAWhFcVx6w3oC8VKaUfPGA==}
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      ajv: 8.11.0
+      lodash.truncate: 4.4.2
+      slice-ansi: 4.0.0
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
     dev: true
 
   /text-extensions/1.9.0:

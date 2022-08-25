@@ -1,10 +1,11 @@
 import 'dotenv/config';
 import { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
+import '@nomiclabs/hardhat-etherscan';
 
 const metamask_private_key = `0x${process.env.METAMASK_PRIVATE_KEY}`;
 
-const config: HardhatUserConfig = {
+const config = {
   solidity: '0.8.16',
   networks: {
     localhost: {
@@ -21,7 +22,9 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      rinkeby: String(process.env.ETHERSCAN_API_KEY),
+    },
   },
 };
 
