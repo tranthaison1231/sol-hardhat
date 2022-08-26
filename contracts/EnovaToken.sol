@@ -8,7 +8,11 @@ contract EnouvaToken is ERC20, AccessControl {
   bytes32 public constant MINTER_ROLE = keccak256('MINTER_ROLE');
   bytes32 public constant BUNNER_ROLE = keccak256('BUNNER_ROLE');
 
-  constructor(uint256 initialSupply, address[] memory minters, address[] memory burners) ERC20('ENOUVA', 'ENV') {
+  constructor(
+    uint256 initialSupply,
+    address[] memory minters,
+    address[] memory burners
+  ) ERC20('ENOUVA', 'ENV') {
     _mint(msg.sender, initialSupply);
 
     for (uint256 i = 0; i < minters.length; ++i) {
@@ -18,7 +22,6 @@ contract EnouvaToken is ERC20, AccessControl {
     for (uint256 i = 0; i < burners.length; ++i) {
       _setupRole(BUNNER_ROLE, minters[i]);
     }
-
   }
 
   function mint(address to, uint256 amount) public {

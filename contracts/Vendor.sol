@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.16;
+pragma solidity 0.8.16;
 
 import './GLDToken.sol';
-
-// on OpenZeppelin docs: https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable
 import '@openzeppelin/contracts/access/Ownable.sol';
 
 contract Vendor is Ownable {
